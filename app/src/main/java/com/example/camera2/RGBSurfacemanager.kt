@@ -1,7 +1,7 @@
 package com.example.camera2
 
 import android.util.Rational
-import android.util.Rational.*
+import android.util.Rational.ZERO
 import android.util.Size
 import androidx.camera.core.impl.CameraDeviceSurfaceManager
 import androidx.camera.core.impl.SurfaceConfig
@@ -34,7 +34,9 @@ class RGBSurfaceManager : CameraDeviceSurfaceManager {
         existingSurfaces: MutableList<SurfaceConfig>,
         newUseCaseConfigs: MutableList<UseCaseConfig<*>>
     ): MutableMap<UseCaseConfig<*>, Size> {
-        return mutableMapOf(newUseCaseConfigs[0] to Size(1920, 1080))
+
+        return mutableMapOf(newUseCaseConfigs[0] to Size(1920, 1080),
+            newUseCaseConfigs[1] to Size(1920, 1080))
     }
 
     override fun getPreviewSize(): Size {
@@ -48,4 +50,5 @@ class RGBSurfaceManager : CameraDeviceSurfaceManager {
     override fun getMaxOutputSize(cameraId: String?, imageFormat: Int): Size? {
         TODO("Not yet implemented")
     }
+
 }
