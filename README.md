@@ -3,7 +3,7 @@ Unfortunately,  CameraX does not support external cameras for 1.0.0-beta06, as p
 
 The solution provided in this project is to use custom CameraDeviceSurfaceManager
 
-# Check you devices camera HAL
+# Check your devices camera HAL
 ```
 adb shell dumpsys media.camera
 ```
